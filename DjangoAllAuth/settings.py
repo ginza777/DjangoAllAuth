@@ -204,22 +204,7 @@ STATIC_URL = 'static/'
 
 # twillo
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-ONE_SIGNAL_APP_ID = "d7cf0283-0b93-4b73-b9c3-6ff95adfee3d"
-ONE_SIGNAL_REST_API_KEY = "ZTc0YTZiMTQtZjY0Mi00NzQzLWE4MTQtNTIwYThmNjJkOGM1"
-TWILIO_ACCOUNT_SID = env.str("TWILIO_ACCOUNT_SID", "ACc7a9f4760ff153578ae6be6cd8d5a2fe")
-TWILIO_AUTH_TOKEN = env.str("TWILIO_AUTH_TOKEN", "ed409d2ab162a922cee648761d718500")
-TWILIO_NUMBER = env.str("TWILIO_PHONE_NUMBER", "+13137101945")
 
-# ===================   EMAIL BACKEND SETTINGS   ===================
-EMAIL_BACKEND = env.str("EMAIL_BACKEND", "django.core.mail.backends.smtp.EmailBackend")
-EMAIL_HOST = env.str("EMAIL_HOST", "smtp.yandex.ru")
-EMAIL_PORT = env.str("EMAIL_PORT", 587)
-# EMAIL_HOST_USER = env.str("EMAIL_HOST_USER", "")
-# EMAIL_HOST_PASSWORD = env.str("EMAIL_HOST_PASSWORD", "")
-EMAIL_HOST_USER = "smtp.dev.test.com@gmail.com"
-EMAIL_HOST_PASSWORD = "hitrvsnsjlmblhbq"
-EMAIL_USE_TLS = True
-EMAIL_USE_SSL = False
 
 # ************************************************************#
 # all auth settings
@@ -254,20 +239,15 @@ SOCIALACCOUNT_PROVIDERS = {  # noqa
     "apple": {
         "APP": {
             # Your service identifier.
-            "client_id": env.str("SOCIALACCOUNT_APPLE_CLIENT_ID", "org.uicgroup.saraf"),
+            "client_id": env.str("SOCIALACCOUNT_APPLE_CLIENT_ID", ""),
             # The Key ID (visible in the "View Key Details" page).
-            "secret": env.str("SOCIALACCOUNT_APPLE_SECRET", "6AA5N4JHRW"),
+            "secret": env.str("SOCIALACCOUNT_APPLE_SECRET", ""),
             # Member ID/App ID Prefix -- you can find it below your name
             # at the top right corner of the page, or it’s your App ID
             # Prefix in your App ID.
-            "key": env.str("SOCIALACCOUNT_APPLE_TEAM_ID", "KHGXWF53U9"),  # team id
+            "key": env.str("SOCIALACCOUNT_APPLE_TEAM_ID", ""),  # team id
             # The certificate you downloaded when generating the key.
-            "certificate_key": """-----BEGIN PRIVATE KEY-----
-MIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQg9Y9AUAtNkzokgcrC
-BJaLzakgvW7B3XkBZCfOhpX/7sKgCgYIKoZIzj0DAQehRANCAASyue0ELtBesUK/
-lsdNYzPa8zWMxlTNs973bVom9MCw7wdo/gdp1oqagf4XSrJ9cc1XCeVcYTrvJKBr
-Z3BPe6TI
------END PRIVATE KEY-----""",
+            "certificate_key": "",
         }
     },
 }
